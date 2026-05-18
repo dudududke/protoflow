@@ -1,0 +1,28 @@
+base: base_common.yaml
+experiment:
+  name: isaid_protoflow
+  output_dir: outputs/isaid_protoflow
+
+dataset:
+  root: data/processed/isaid
+  train_split: train.txt
+  val_split: val.txt
+  num_classes: 16
+  class_names: [background, storage_tank, ship, swimming_pool, baseball_diamond, tennis_court, basketball_court, ground_track_field, bridge, large_vehicle, small_vehicle, helicopter, roundabout, soccer_ball_field, plane, harbor]
+  augmentation:
+    crop_size: 512
+
+protocol:
+  type: class_incremental
+  label_visibility: cumulative
+  steps:
+    - [0, 1, 2, 3, 4, 5, 6, 7]
+    - [8, 9, 10]
+    - [11, 12, 13]
+    - [14, 15]
+
+train:
+  lr: 0.005
+  batch_size: 4
+  eval_batch_size: 4
+  max_iters: 60000

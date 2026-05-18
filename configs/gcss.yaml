@@ -1,0 +1,28 @@
+base: base_common.yaml
+experiment:
+  name: gcss_protoflow
+  output_dir: outputs/gcss_protoflow
+
+dataset:
+  root: data/processed/gcss
+  train_split: train.txt
+  val_split: val.txt
+  num_classes: 10
+  class_names: [background, building, road, water, vegetation, bareland, farmland, car, ship, other]
+  augmentation:
+    crop_size: 512
+
+protocol:
+  type: class_incremental
+  label_visibility: cumulative
+  steps:
+    - [0, 1, 2, 3, 4]
+    - [5, 6]
+    - [7]
+    - [8, 9]
+
+train:
+  lr: 0.005
+  batch_size: 4
+  eval_batch_size: 4
+  max_iters: 60000

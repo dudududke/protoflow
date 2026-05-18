@@ -1,0 +1,4 @@
+images/train/train_0000.png masks/train/train_0000.png
+images/train/train_0001.png masks/train/train_0001.png
+images/train/train_0002.png masks/train/train_0002.png
+images/train/train_0003.png masks/train/train_0003.png

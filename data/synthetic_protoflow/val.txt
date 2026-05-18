@@ -1,0 +1,2 @@
+images/val/val_0000.png masks/val/val_0000.png
+images/val/val_0001.png masks/val/val_0001.png

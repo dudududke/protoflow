@@ -1,0 +1,66 @@
+base: base_common.yaml
+experiment:
+  name: smoke
+  seed: 0
+  deterministic: true
+  output_dir: outputs/smoke
+
+dataset:
+  root: data/synthetic_protoflow
+  train_split: train.txt
+  val_split: val.txt
+  num_classes: 4
+  class_names: [background, red_object, green_object, blue_object]
+  ignore_index: 255
+  background_id: 0
+  map_unseen_to_background: true
+  crop_size: 32
+  imagenet_norm: true
+  augmentation:
+    crop_size: 32
+    min_scale: 0.8
+    max_scale: 1.2
+    hflip_prob: 0.5
+    vflip_prob: 0.5
+    rotate90: true
+    color_jitter: 0.1
+
+protocol:
+  type: class_incremental
+  label_visibility: cumulative
+  steps:
+    - [0, 1]
+    - [2, 3]
+
+model:
+  backbone: simple_cnn
+  in_channels: 3
+  feature_dim: 16
+  simple_width: 4
+  pretrained: ""
+
+protoflow:
+  hidden_dim: 16
+  time_dim: 8
+  ema_alpha: 0.2
+  use_time: true
+  use_flow: true
+  use_curve: true
+  use_sep: true
+  prototype_norm: true
+  margin: 0.5
+
+memory:
+  budget_per_class: 2
+  strategy: random
+
+train:
+  device: cpu
+  batch_size: 2
+  eval_batch_size: 2
+  num_workers: 0
+  lr: 0.02
+  warmup_iters: 0
+  max_iters: 1
+  log_interval: 1
+  num_threads: 1

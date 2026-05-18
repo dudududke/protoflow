@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "protoflow-reproduce"
+version = "0.1.0"
+description = "Reproduction implementation of ProtoFlow for class-incremental remote-sensing segmentation"
+requires-python = ">=3.9"
+
+[tool.setuptools.packages.find]
+include = ["protoflow*"]

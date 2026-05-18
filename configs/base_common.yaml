@@ -1,0 +1,79 @@
+experiment:
+  name: protoflow_base
+  seed: 0
+  deterministic: false
+  output_dir: outputs/protoflow_base
+
+dataset:
+  root: data/processed/dataset_name
+  train_split: train.txt
+  val_split: val.txt
+  eval_split_key: val_split
+  num_classes: 7
+  ignore_index: 255
+  background_id: null
+  map_unseen_to_background: false
+  crop_size: 512
+  imagenet_norm: true
+  use_nir_as_red: false
+  augmentation:
+    crop_size: 512
+    min_scale: 0.5
+    max_scale: 2.0
+    hflip_prob: 0.5
+    vflip_prob: 0.5
+    rotate90: true
+    color_jitter: 0.2
+
+protocol:
+  type: class_incremental
+  label_visibility: cumulative
+  steps:
+    - [0, 1, 2, 3]
+    - [4]
+    - [5]
+    - [6]
+
+model:
+  backbone: hrnet_w48
+  in_channels: 3
+  feature_dim: 256
+  pretrained: weights/hrnet_w48_imagenet.pth
+
+protoflow:
+  hidden_dim: 256
+  time_dim: 16
+  ema_alpha: 0.1
+  use_time: true
+  use_flow: true
+  use_curve: true
+  use_sep: true
+  prototype_norm: true
+  margin: 0.5
+
+loss:
+  temperature: 2.0
+  lambda_dist: 1.0
+  lambda_flow: 1.0
+  lambda_curve: 0.5
+  lambda_sep: 0.1
+
+memory:
+  budget_per_class: 20
+  strategy: herding
+
+train:
+  device: cuda
+  batch_size: 8
+  eval_batch_size: 8
+  num_workers: 4
+  lr: 0.01
+  momentum: 0.9
+  weight_decay: 0.0001
+  nesterov: false
+  poly_power: 0.9
+  warmup_iters: 1000
+  warmup_lr: 0.0001
+  grad_clip: 1.0
+  max_iters: 40000
+  log_interval: 50

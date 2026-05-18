@@ -1,0 +1,32 @@
+base: base_common.yaml
+experiment:
+  name: loveda_protoflow
+  output_dir: outputs/loveda_protoflow
+
+dataset:
+  root: data/processed/loveda
+  train_split: train.txt
+  urban_train_split: urban_train.txt
+  rural_train_split: rural_train.txt
+  mixed_train_split: mixed_train.txt
+  val_split: val.txt
+  num_classes: 7
+  class_names: [background, building, road, water, barren, forest, agriculture]
+  background_id: 0
+  map_unseen_to_background: false
+  augmentation:
+    crop_size: 512
+
+protocol:
+  type: domain_incremental
+  domains:
+    - name: urban
+      train_split: urban_train_split
+    - name: rural
+      train_split: rural_train_split
+    - name: mixed
+      train_split: mixed_train_split
+
+train:
+  lr: 0.01
+  max_iters: 40000

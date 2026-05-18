@@ -1,0 +1,26 @@
+base: base_common.yaml
+experiment:
+  name: deepglobe_protoflow
+  output_dir: outputs/deepglobe_protoflow
+
+dataset:
+  root: data/processed/deepglobe
+  train_split: train.txt
+  val_split: val.txt
+  num_classes: 7
+  class_names: [urban, agriculture, rangeland, forest, water, barren, unknown]
+  augmentation:
+    crop_size: 512
+
+protocol:
+  type: class_incremental
+  label_visibility: cumulative
+  steps:
+    - [0, 1, 2, 3]
+    - [4]
+    - [5]
+    - [6]
+
+train:
+  lr: 0.01
+  max_iters: 40000
