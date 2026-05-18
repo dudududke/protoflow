@@ -11,12 +11,6 @@
 
 ProtoFlow is a time-aware prototype dynamics framework for incremental remote sensing segmentation, designed to reduce catastrophic forgetting under class and domain shifts.
 
-## Highlights
-
-- Time-conditioned ProtoFlow field for modeling prototype evolution.
-- Curvature and separation regularization for stable incremental learning.
-- Unified configs for DeepGlobe, Vaihingen, Potsdam, LoveDA, iSAID, and GCSS.
-
 ## Installation
 
 ```bash
