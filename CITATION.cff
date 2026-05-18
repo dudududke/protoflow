@@ -1,0 +1,67 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the following work."
+title: "ProtoFlow: Mitigating Forgetting in Class-Incremental Remote Sensing Segmentation via Low-Curvature Prototype Flow"
+type: software
+authors:
+  - family-names: Wu
+    given-names: Jiekai
+  - family-names: Fu
+    given-names: Rong
+  - family-names: Li
+    given-names: Chuangqi
+  - family-names: Zhang
+    given-names: Zijian
+  - family-names: Wu
+    given-names: Guangxin
+  - family-names: Zhang
+    given-names: Hao
+  - family-names: Lin
+    given-names: Shiyin
+  - family-names: Ni
+    given-names: Jianyuan
+  - family-names: Li
+    given-names: Yang
+  - family-names: Zhang
+    given-names: Dongxu
+  - family-names: Gandomi
+    given-names: Amir H.
+  - family-names: Fong
+    given-names: Simon
+  - family-names: Feng
+    given-names: Pengbin
+repository-code: "https://github.com/dudududke/protoflow"
+url: "https://github.com/dudududke/protoflow"
+preferred-citation:
+  type: article
+  title: "ProtoFlow: Mitigating Forgetting in Class-Incremental Remote Sensing Segmentation via Low-Curvature Prototype Flow"
+  authors:
+    - family-names: Wu
+      given-names: Jiekai
+    - family-names: Fu
+      given-names: Rong
+    - family-names: Li
+      given-names: Chuangqi
+    - family-names: Zhang
+      given-names: Zijian
+    - family-names: Wu
+      given-names: Guangxin
+    - family-names: Zhang
+      given-names: Hao
+    - family-names: Lin
+      given-names: Shiyin
+    - family-names: Ni
+      given-names: Jianyuan
+    - family-names: Li
+      given-names: Yang
+    - family-names: Zhang
+      given-names: Dongxu
+    - family-names: Gandomi
+      given-names: Amir H.
+    - family-names: Fong
+      given-names: Simon
+    - family-names: Feng
+      given-names: Pengbin
+  year: 2026
+  archive: arXiv
+  eprint: "2604.03212"
+  url: "https://arxiv.org/abs/2604.03212"

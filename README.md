@@ -1,3 +1,21 @@
+<h1 align="center">ProtoFlow: Mitigating Forgetting in Class-Incremental Remote Sensing Segmentation via Low-Curvature Prototype Flow</h1>
+
+<p align="center">
+  <a href="https://arxiv.org/abs/2604.03212">Paper</a> |
+  <a href="https://github.com/dudududke/protoflow">Code</a>
+</p>
+
+<p align="center">
+  <img src="assets/teaser.png" alt="ProtoFlow teaser" width="90%">
+</p>
+
+ProtoFlow is a time-aware prototype dynamics framework for incremental remote sensing segmentation, designed to reduce catastrophic forgetting under class and domain shifts.
+
+## Highlights
+
+- Time-conditioned ProtoFlow field for modeling prototype evolution.
+- Curvature and separation regularization for stable incremental learning.
+- Unified configs for DeepGlobe, Vaihingen, Potsdam, LoveDA, iSAID, and GCSS.
 
 ## Installation
 
@@ -101,4 +119,18 @@ protoflow/
     tools/                         CLI tools: train, eval, patchify, synthetic data, analysis plots
   scripts/run_smoke_test.sh         one-command smoke test
   requirements.txt
+```
+
+## Citation
+
+```bibtex
+@misc{wu2026protoflowmitigatingforgettingclassincremental, 
+      title={ProtoFlow: Mitigating Forgetting in Class-Incremental Remote Sensing Segmentation via Low-Curvature Prototype Flow}, 
+      author={Jiekai Wu and Rong Fu and Chuangqi Li and Zijian Zhang and Guangxin Wu and Hao Zhang and Shiyin Lin and Jianyuan Ni and Yang Li and Dongxu Zhang and Amir H. Gandomi and Simon Fong and Pengbin Feng},
+      year={2026},
+      eprint={2604.03212},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2604.03212}, 
+}
 ```
